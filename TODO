@@ -1,0 +1,16 @@
+- implement fragmentation?
+- skip over ip options, change code that accesess that data
+
+- fix up cmd line!
+CMD LINE:
+  up <if#>
+  down <if#>
+  ifs
+  routes
+  send 10.2.3.4 <proto> junk
+
+  JUST FOR OURS:
+    sleep <seconds> - for redirecting a file to stdin
+
+when we print packets, print potential errors (checksum failed!)
+- include faulty node, newest run* scripts (in faulty)

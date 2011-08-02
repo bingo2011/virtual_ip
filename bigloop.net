@@ -1,0 +1,14 @@
+node bigloopX localhost
+node bigloopY localhost
+node bigloopW localhost
+node bigloopV localhost
+node bigloopZ localhost
+node bigloopComp1 localhost
+node bigloopComp2 localhost
+bigloopX<->bigloopZ
+bigloopX<->bigloopY
+bigloopY<->bigloopW
+bigloopW<->bigloopV
+bigloopV<->bigloopZ
+bigloopComp1<->bigloopX
+bigloopComp2<->bigloopZ

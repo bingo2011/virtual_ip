@@ -1,0 +1,6 @@
+node cslab4A cslab4a
+node cslab4B cslab4b
+node cslab4C cslab4c
+cslab4A<->cslab4B
+cslab4B<->cslab4C
+cslab4C<->cslab4A

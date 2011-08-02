@@ -1,0 +1,49 @@
+- different interface if different link layer? different link_send?
+  make this cleare in the handout.  Clearer phrasing: How would they
+  go about making a link layer that they can just replace with
+  another, or having multiple interface_t that can be used
+  simultaneously? Or should they just not worry about this at all?
+
+- stbrody + his partner spent 3 hours trying to fix a bug. they didn't
+  realize that for UDP, you have to read in the entire packet, or the
+  rest of the packet will be dropped (they were reading 20 bytes for
+  IP header, then trying to read in the rest of the payload).  
+  * Make a distinction that for TCP, you have to check for return
+    value, and it's a stream, so it may be however many bytes, but
+    that UDP is packet-based, so you receive all or nothing.
+
+- clarify that they should have a net_init that gets passed all the
+  interfaces. 2 groups got confused about this.
+
+- clarify that struct ip * contains just the header, but that the
+  memory after this header is the actual payload.
+
+- specify clearly that they are not to change the function prototypes
+  that we give them.
+  - right now it says 'suggested function prototypes' - but I thought we
+    were requiring these?
+
+- maybe be clearer about network byte order - one group tried doing
+  ntohs on a 4-bit field. Another student was confused when I
+  suggested he "transform the entire header into host order" - he
+  thought I meant to do something special with all 20 bytes at once,
+  not with each field separately. There is clearly confusion about
+  this isssue.
+
+- it would be really awesome to hook this project into the OS and have
+  it use this network for routing. Or maybe we can write an HTTP proxy
+  for mozilla to use which sends requests to a specially designated
+  HTTP node. It would be really great. We should have time to do it
+  next year.
+
+- be explicit about how checksums should work. you have to zero the
+  field first, and you have to operate on the nbo-field packet.
+
+- specify when the TTL == 0 check should be made (after decrementing)
+
+- maybe clarify why we always refresh our interfaces
+
+- maybe make them checkout the node from svn, so that they can update
+  it whenever we make a change and so there are no unexpected surprises.
+
+- do everything in the TODO
